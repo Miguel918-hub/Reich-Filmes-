@@ -3,75 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site Legal</title>
+    <!-- O nome que você pediu -->
+    <title>Reich Filmes 🍿</title>
+    
+    <!-- Estilos CSS embutidos no HTML -->
     <style>
-        /* Estilos CSS */
+        /* Estilo Geral */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
+            background-color: #121212; /* Fundo escuro */
+            color: #ffffff; /* Texto branco */
         }
+
+        /* Cabeçalho */
         header {
-            background-color: #333;
-            color: white;
-            padding: 20px;
+            background-color: #1f1f1f;
+            padding: 1rem 2rem;
             text-align: center;
+            border-bottom: 3px solid #E50914; /* Vermelho estilo Netflix */
         }
-        nav {
-            background-color: #444;
-            color: white;
-            padding: 10px;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
+
+        header h1 {
+            font-size: 2.5rem;
             margin: 0;
-            text-align: center;
+            letter-spacing: 2px;
         }
-        nav li {
-            display: inline;
-            margin: 0 10px;
-        }
+
+        /* Conteúdo Principal */
         main {
-            padding: 20px;
+            padding: 2rem;
         }
-        footer {
-            background-color: #333;
-            color: white;
+
+        .gallery-title {
             text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 1rem;
+        }
+
+        /* Galeria de Vídeos */
+        .video-gallery {
+            display: grid;
+            /* Cria colunas responsivas: 1 para telas pequenas, 2 para médias, 3 para grandes */
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        /* Cartão de cada vídeo */
+        .video-card {
+            background-color: #1f1f1f;
+            border-radius: 8px;
+            overflow: hidden; /* Garante que o vídeo não saia do card */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: scale(1.03); /* Efeito de zoom ao passar o mouse */
+        }
+
+        .video-card video {
+            width: 100%; /* Faz o vídeo ocupar toda a largura do card */
+            display: block;
+        }
+
+        .video-info {
+            padding: 1rem;
+        }
+
+        .video-info h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: #E50914;
+        }
+
+        .video-info p {
+            font-size: 0.9rem;
+            color: #cccccc;
+        }
+        
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            background-color: #1f1f1f;
+            border-top: 1px solid #333;
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>Meu Site Legal</h1>
+        <h1>Reich Filmes 🍿</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#">Início</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
-    </nav>
+
     <main>
-        <h2>Bem-vindo!</h2>
-        <p>Este é um exemplo de site legal e ético.</p>
-        <button id="meuBotao">Clique em mim!</button>
+        <h2 class="gallery-title">Meus Filmes e Curtas</h2>
+        
+        <div class="video-gallery">
+
+            <!-- VÍDEO 1 - EXEMPLO -->
+            <div class="video-card">
+                <!-- O atributo 'controls' adiciona os botões de play, volume, etc. -->
+                <!-- O atributo 'poster' mostra uma imagem antes de dar play -->
+                <video controls poster="https://via.placeholder.com/400x225.png?text=Capa+do+Vídeo+1">
+                    <!-- MUDE O NOME DO ARQUIVO AQUI -->
+                    <source src="seu-video-1.mp4" type="video/mp4">
+                    Seu navegador não suporta a tag de vídeo.
+                </video>
+                <div class="video-info">
+                    <h3>Meu Primeiro Curta-Metragem</h3>
+                    <p>Uma aventura incrível gravada nas montanhas. Este foi meu projeto de estreia no mundo do cinema.</p>
+                </div>
+            </div>
+
+            <!-- VÍDEO 2 - EXEMPLO -->
+            <div class="video-card">
+                <video controls poster="https://via.placeholder.com/400x225.png?text=Capa+do+Vídeo+2">
+                    <!-- MUDE O NOME DO ARQUIVO AQUI -->
+                    <source src="seu-video-2.mp4" type="video/mp4">
+                    Seu navegador não suporta a tag de vídeo.
+                </video>
+                <div class="video-info">
+                    <h3>Vídeo de Viagem: Litoral</h3>
+                    <p>Os melhores momentos da minha viagem para a costa, com cenas de tirar o fôlego.</p>
+                </div>
+            </div>
+            
+            <!-- Adicione mais vídeos aqui, copiando o bloco do 'video-card' -->
+            <!-- 
+            <div class="video-card">
+                <video controls>
+                    <source src="seu-video-3.mp4" type="video/mp4">
+                </video>
+                <div class="video-info">
+                    <h3>Título do Vídeo 3</h3>
+                    <p>Descrição do vídeo 3.</p>
+                </div>
+            </div> 
+            -->
+
+        </div>
     </main>
+
     <footer>
-        <p>&copy; 2024 Meu Site Legal</p>
+        <p>&copy; 2025 Reich Filmes. Todos os direitos reservados aos criadores originais.</p>
     </footer>
+
+    <!-- JavaScript pode ser adicionado aqui se precisar de mais interatividade -->
     <script>
-        // JavaScript
-        document.getElementById("meuBotao").addEventListener("click", function() {
-            alert("Você clicou no botão!");
+        // Este script é executado quando a página carrega
+        console.log("Bem-vindo ao site Reich Filmes! Site carregado com sucesso.");
+        
+        // Exemplo de interatividade: mostra um alerta ao clicar no título de um vídeo
+        document.querySelectorAll('.video-info h3').forEach(title => {
+            title.addEventListener('click', () => {
+                alert("Você clicou no título: " + title.innerText);
+            });
         });
     </script>
+
 </body>
 </html>
